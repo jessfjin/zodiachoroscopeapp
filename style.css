@@ -1,0 +1,60 @@
+#body {
+	margin: 0px;
+	padding: 0px;
+}
+#topBar {
+	padding: 20px 0px;
+	background-color: #112e4c;
+	opacity: .8;
+}
+#topBar h1, h2 {
+	color:#cca300;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
+#dateRanges {
+	width: 40%;
+	margin: 3% 10%;
+	display: inline-block;
+	box-shadow: 2px #112e4c;
+}
+#btnSign {
+	width: 20%;
+	margin: 3% 8%;
+	display: inline-block;
+}
+#zodiac-section h2 {
+	color: #242a2f;
+	text-shadow: #787D83; 
+	font-family: 'Montserrat', sans-serif;
+	width: 88%;
+	margin: 3% 8%;
+	text-align: center;
+}
+#zodiac-section h1 {
+	text-align: center;
+}
+#horoscope-section h4 {
+	color: #43484d;
+	text-shadow: #242a2f; 
+	font-family: 'Raleway', sans-serif;
+	background-color: #cca300;
+	opacity: .6;
+	width: 88%;
+	margin: 3% 8%;
+	text-align: center;
+}
+.parallax { 
+    /* The image used */
+    background-image: url("images/background.jpg");
+    margin-top: 2px;
+    /* Set a specific height */
+    height: 750px; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2017 Astrology Horoscopes</title>
+	<!-- jQuery libraries -->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- google fonts link -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+	<!-- personalized CSS stylesheet -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- tab icon -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body id="body">
+<!-- HEADER/TOP BAR -->
+	<nav>
+		<div id="topBar">
+			<h1>.: for answers, just look to the stars :.</h1>
+			<h2>Discover your cosmically aligned destiny for 2017 here...</h2>
+		</div>
+	</nav>
+<!-- Find your ZODIAC & HOROSCOPE section -->
+	<div class="parallax">
+		<section id="zodiac-section">
+			<div class="container">
+				<h2>Select your birthdate here:</h2>
+				<select id="dateRanges" class="form-control"> Month:
+					<option id="aqu">January 20 - February 18</option><option id="pis">February 19 - March 20</option><option id="ari">March 21 - April 19</option><option id="tau">April 20 - May 20</option><option id="gem">May 21 - June 20</option><option id="can">June 21 - July 22</option><option id="leo">July 23 - August 22</option><option id="vir">August 23 - September 22</option><option id="lib">September 23 - October 22</option><option id="sco">October 23 - November 21</option><option id="sag">November 22 - December 21</option><option id="cap">December 22 - January 19</option>
+				</select>
+				<button id ="btnSign" class="btn btn-primary" onclick="find()">Find My Sign</button>
+				<h1 id="zdcSign">You are a...</h1>
+			</div>
+		</section>
+	<!-- Discover your HOROSCOPE section -->
+		<section id="horoscope-section">
+			<div class="container">
+					<!-- * Old code - not using anymore... * 			
+					<h3>Enter your sign here:</h3>
+					<input type="text" name="zodiac" id="zodiac">
+					<button id ="btnHoroscope" onclick="discover()">Discover My Destiny</button> -->
+					<h4 id="zdcReading">... and this year ...</h4>
+			</div>
+		</section>
+	</div>						
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
