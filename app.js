@@ -1,3 +1,5 @@
+
+// Code to stores responses and enables the "Find My Sign" aspect to work
 // Created an array of objects with the properties of zodiac signs, icons, horoscope readings, & etc...
 // Saved it as a global variable
 var zodiacObjArray = [
@@ -110,7 +112,7 @@ var zodiacObjArray = [
 		dates: "December 22 - January 19"
 	} ]
 
-
+// Code creating the Function that runs when "Find MY Sign" button is clicked
 // Created a function that searches through the above array for the inputed birtdate 
 // and then RETURNS the sign and horoscope on the page
 function find() {
@@ -123,19 +125,100 @@ function find() {
 	}
 }
 
-// * OLD CODE - not using anymore *
-// Created a function that searches through the above array for the inputted sign & then
-// pushes the found properties out onto the HTML & page
-// function discover() {
-// 	var inputtedZodiac = document.getElementById('zodiac').value.toLowerCase()
-// 	console.log(inputtedZodiac);
-// 	for (i=0;i<zodiacObjArray.length;i++) {
-// 		if (zodiacObjArray[i].sign == inputtedZodiac) {
-// 			console.log(zodiacObjArray[i].sign + zodiacObjArray[i].type)
-// 			console.log(zodiacObjArray[i].horoscope)
-// 			document.getElementById('zdcReading').innerHTML = zodiacObjArray[i].horoscope
-// 		}
-// 	}
-// }
+// Code for the Plug In that Allows For the Type Animation in the Header
+"use strict";
+var prefix = ' for answers,';
+var skills = [
+    ' look to the stars ',
+    ' find your zodiac sign ',
+    ' read your horoscope ',
+    ' distinguish the signs ',
+    ' listen to your soul ',
+    ' discover your destiny '
+].map(function (s) { return s + "."; });
+var delay = 2;
+var step = 1;
+var tail = 5;
+var timeout = 75;
+var headerText = document.createElement('h1');
+// document.body.appendChild(headerText);
+document.getElementById("addHere").appendChild(headerText);
+var colors = [
+    "#b6b66d",
+    "#54549c",
+    "#fff"
+];
+function getRandomColor() {
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+function getRandomChar() {
+    return String.fromCharCode(Math.random() * (127 - 33) + 33);
+}
+function getRandomColoredString(n) {
+    var result = '';
+    for (var i = 0; i < n; i++) {
+        result += "<span style=\"color:" + getRandomColor() + "\">" + getRandomChar() + "</span>";
+    }
+    return result;
+}
+/** Global State */
+var $ = {
+    solid: '',
+    prefixP: -tail,
+    skillI: 0,
+    skillP: 0,
+    direction: 'forward',
+    delay: delay,
+    step: step
+};
+function render() {
+    var skill = skills[$.skillI];
+    if ($.step) {
+        $.step--;
+    }
+    else {
+        $.step = step;
+        if ($.prefixP < prefix.length) {
+            if ($.prefixP >= 0) {
+                $.solid += prefix[$.prefixP];
+            }
+            $.prefixP++;
+        }
+        else {
+            if ($.direction === 'forward') {
+                if ($.skillP < skill.length) {
+                    $.solid += skill[$.skillP];
+                    $.skillP++;
+                }
+                else {
+                    if ($.delay) {
+                        $.delay--;
+                    }
+                    else {
+                        $.direction = 'backward';
+                        $.delay = delay;
+                    }
+                }
+            }
+            else {
+                if ($.skillP > 0) {
+                    $.solid = $.solid.slice(0, -1);
+                    $.skillP--;
+                }
+                else {
+                    $.skillI = ($.skillI + 1) % skills.length;
+                    $.direction = 'forward';
+                }
+            }
+        }
+    }
+    headerText.innerHTML = $.solid + getRandomColoredString($.prefixP < prefix.length ?
+        Math.min(tail, tail + $.prefixP) :
+        Math.min(tail, skill.length - $.skillP));
+    setTimeout(render, timeout);
+}
+setTimeout(render, 500);
+
+
 
 

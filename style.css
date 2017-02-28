@@ -1,4 +1,4 @@
-#body {
+body {
 	margin: 0px;
 	padding: 0px;
 }
@@ -13,6 +13,9 @@
 	text-align: center;
 	width: 100%;
 	margin: 0 auto;
+}
+#topBar h1 {
+	font-size: 30px
 }
 #dateRanges {
 	width: 40%;
