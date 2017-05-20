@@ -39,6 +39,9 @@ body {
 #zodiac-section h1 {
 	text-align: center;
 }
+#picture{
+	margin-left: 40%
+}
 #horoscope-section h4 {
 	color: #43484d;
 	text-shadow: #242a2f; 
@@ -61,3 +64,5 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* NEED TO ADD MEDIA QUERIES */
