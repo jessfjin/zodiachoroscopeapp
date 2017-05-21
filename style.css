@@ -39,9 +39,7 @@ body {
 #zodiac-section h1 {
 	text-align: center;
 }
-#picture{
-	margin-left: 40%
-}
+
 #horoscope-section h4 {
 	color: #43484d;
 	text-shadow: #242a2f; 
@@ -65,4 +63,22 @@ body {
     background-size: cover;
 }
 
-/* NEED TO ADD MEDIA QUERIES */
+/* RESPONSIVE DESIGN - MEDIA QUERIES */
+@media (max-width: 800px) {
+	.col-sm-6{
+		display: inline-block;
+	}
+	#picture { 
+		display: inline-block;
+		width: 60%
+	}	
+	#type {
+		display: inline-block;
+		width: 60%;
+	}
+}
+@media (max-width: 550px) {
+	.col-sm-6{
+		width: 48%;
+	}
+}
